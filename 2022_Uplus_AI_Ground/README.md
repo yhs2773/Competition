@@ -37,7 +37,7 @@
 ### 모델
 ---
 ##### Neural Collaborative Filtering (NCF)
-- Matrix factorization과 deep neural network를 결합시킨 NeuMF로 진행
+- Matrix factorization과 deep neural network를 결합시킨 [NeuMF](https://arxiv.org/pdf/1708.05031.pdf)로 진행
 1. 다양한 피처들을 (성별, 시청 시간, 컨텐츠 주인공 등) 집어넣어 진행 (결과 = 0.2167 까지 향상)
 2. DNN의 layer 변경 및 최종 hidden layer 차원 조절 후 0.2180까지 향상
 3. Optimal hyperparameter를 찾기 위해 ray tune과 grid search를 진행 후 결과를 0.2230까지 향상
@@ -62,3 +62,5 @@
 - 리소스 제한으로 모델을 더 복잡하게 만들지 못한 것이 아쉽다
 - NeuMF는 MF와 DNN을 합친 모델인데 DNN 대신 다른 모델을 사용하는 것이 더 좋은 방법이었을 듯 하다
 - LightGCN + BNS를 해봤지만 BNS 대신 다른 negative sampling 기법을 결합했다면 결과가 더 좋았을지 궁금하다
+
+자세한 내용은 [2022 Uplus AI Ground](https://coldnoodlesoup.wixsite.com/nextai/post/2022-%EC%9C%A0%ED%94%8C%EB%9F%AC%EC%8A%A4-ai-ground)를 참고
