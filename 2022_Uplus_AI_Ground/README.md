@@ -37,10 +37,10 @@
 2. DNN의 layer 변경 및 최종 hidden layer 차원 조절 후 0.2180까지 향상
 3. Optimal hyperparameter를 찾기 위해 ray tune과 grid search를 진행 후 결과를 0.2230까지 향상
 #### LightGCN
-- Negative sampling과 모델을 바꿔보는 것도 좋을거 같아서 찾아봄
-- [Bayesian Negative Sampling for Recommendation](https://arxiv.org/pdf/2204.06520.pdf)이라는 22년 7월에 나온 논문을 찾아 시도해보기로 결정
+1. Negative sampling과 모델을 바꿔보는 것도 좋을거 같아서 찾아봄
+2. [Bayesian Negative Sampling for Recommendation](https://arxiv.org/pdf/2204.06520.pdf)이라는 22년 7월에 나온 논문을 찾아 시도해보기로 결정
     - LightGCN과 bayesian negative sampling기법을 결합하는 내용의 논문
-- 학습시간이 너무 오래 걸렸고 결과가 PNS + NeuMF보다 안좋아 폐기
+3. 학습시간이 너무 오래 걸렸고 결과가 PNS + NeuMF보다 안좋아 폐기
 ## 결과
 - 216개의 팀 중 26위
 - 약 3주 반동안 진행된 추천시스템 대회에 3명이서 참여하여 다양한 시각으로 문제 및 데이터를 바라보고 토론을 했던게 생각의 틀을 넓히는데 도움이 됐다
