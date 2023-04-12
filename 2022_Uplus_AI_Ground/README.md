@@ -20,8 +20,7 @@
 5. 에러인 시간 데이터 수정
 6. 범주형 데이터는 정수형 데이터 변환
 7. 중복 데이터 제거
-### Negative Sampling
-
+## Negative Sampling
 - 시청한 콘텐츠 (pos)는 1, 시청하지 않은 콘텐츠 (neg)는 0으로 반환
 ##### Random Negative Sampling (RNS)
 - 시청하지 않은 콘텐츠들을 같은 확률로 두고 랜덤으로 선택하는 샘플링 기법
@@ -32,7 +31,6 @@
 1. 결과는 0.1901과 0.1898로 RNS보다 더 낮은 성능을 보임
 2. 샘플링의 개인화가 부족
 ### 모델
-
 ##### Neural Collaborative Filtering (NCF)
 - Matrix factorization과 deep neural network를 결합시킨 [NeuMF](https://arxiv.org/pdf/1708.05031.pdf)로 진행
 1. 다양한 피처들을 (성별, 시청 시간, 컨텐츠 주인공 등) 집어넣어 진행 (결과 = 0.2167 까지 향상)
