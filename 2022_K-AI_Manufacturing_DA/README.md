@@ -17,6 +17,12 @@
 - 라벨 값 불균형 : SMOTE 기법으로 맞춤
 #### 알고리즘 설계 및 학습 : GRU
 - RNN의 장기의존성 문제 해결
-- LSTM과 GRU를 병렬적으로 검증하여 GRU 모델 선택
+- LSTM과 GRU를 병렬적으로 검증하여 GRU 모델 선택<br>
+![gru](https://user-images.githubusercontent.com/107394778/231495238-d6152420-589d-4bf9-89d4-7184c548d7d5.png)
+
 #### 세부사항 수정
 - Keras tuner와 grid search의 병렬적 처리를 통한 optimal hyperparameter 탐색
+
+## 개선점
+- 시계열 데이터로 인지하고 진행했지만 시계열 데이터가 아니라고 판단하고 진행했다면 문제 정의가 달라졌을까 하는 생각이 든다
+- 시계열 데이터로 인지하고 진행해서 다양한 모델을 사용하지 못했다
