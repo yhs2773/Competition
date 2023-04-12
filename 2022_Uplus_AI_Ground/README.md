@@ -22,38 +22,36 @@
 7. 중복 데이터 제거
 ## Negative Sampling
 - 시청한 콘텐츠 (pos)는 1, 시청하지 않은 콘텐츠 (neg)는 0으로 반환
-##### Random Negative Sampling (RNS)
+#### Random Negative Sampling (RNS)
 - 시청하지 않은 콘텐츠들을 같은 확률로 두고 랜덤으로 선택하는 샘플링 기법
 1. pos:neg 비율을 1:100을 설정 후 진행 (결과 = 0.2143)
 2. 사용된 모델의 논문인 NCF를 참고하여 negative sampling 비율을 3~7로 맞춰서 진행 (결과 =  0.2003, 0.1950)
-##### Popularity-biased Negative Sampling (PNS)
+#### Popularity-biased Negative Sampling (PNS)
 - 시청하지 않은 콘텐츠 중 시청률에 따라 다른 가중치를 주고 선택하는 샘플링 기법
 1. 결과는 0.1901과 0.1898로 RNS보다 더 낮은 성능을 보임
 2. 샘플링의 개인화가 부족
-### 모델
-##### Neural Collaborative Filtering (NCF)
+## 모델
+#### Neural Collaborative Filtering (NCF)
 - Matrix factorization과 deep neural network를 결합시킨 [NeuMF](https://arxiv.org/pdf/1708.05031.pdf)로 진행
 1. 다양한 피처들을 (성별, 시청 시간, 컨텐츠 주인공 등) 집어넣어 진행 (결과 = 0.2167 까지 향상)
 2. DNN의 layer 변경 및 최종 hidden layer 차원 조절 후 0.2180까지 향상
 3. Optimal hyperparameter를 찾기 위해 ray tune과 grid search를 진행 후 결과를 0.2230까지 향상
-##### LightGCN
+#### LightGCN
 - Negative sampling과 모델을 바꿔보는 것도 좋을거 같아서 찾아봄
 - [Bayesian Negative Sampling for Recommendation](https://arxiv.org/pdf/2204.06520.pdf)이라는 22년 7월에 나온 논문을 찾아 시도해보기로 결정
     - LightGCN과 bayesian negative sampling기법을 결합하는 내용의 논문
 - 학습시간이 너무 오래 걸렸고 결과가 PNS + NeuMF보다 안좋아 폐기
-### 결과
-
+## 결과
 - 216개의 팀 중 26위
 - 약 3주 반동안 진행된 추천시스템 대회에 3명이서 참여하여 다양한 시각으로 문제 및 데이터를 바라보고 토론을 했던게 생각의 틀을 넓히는데 도움이 됐다
 - 추천시스템 기본 이론, 데이터 전처리, 모델 튜닝 등 배웠던 것을 대회에 적용시킬 수 있었다는게 도움이 됐다
-### 개선점
-
-##### 데이터 전처리
+## 개선점
+#### 데이터 전처리
 - 데이터를 병합하는 과정에서 샘플 수를 보존하려고 노력한 시간 대비 성과가 아쉬웠다
 - 차원 축소, feature selection/extraction 등의 방법을 사용해 데이터의 차원을 줄이는 것이 논리적일 듯 하다
 - PNS를 단순 클릭률 대신 시간/나이/성별 등 함께 고려하여 진행해보면 좋았을 듯 하다
 - Dynamic negative sampling, simplify and robustify negative sampling 등 다양한 샘플링 알고리즘의 결과도 궁금하다
-##### 모델
+#### 모델
 - 리소스 제한으로 모델을 더 복잡하게 만들지 못한 것이 아쉽다
 - NeuMF는 MF와 DNN을 합친 모델인데 DNN 대신 다른 모델을 사용하는 것이 더 좋은 방법이었을 듯 하다
 - LightGCN + BNS를 해봤지만 BNS 대신 다른 negative sampling 기법을 결합했다면 결과가 더 좋았을지 궁금하다
