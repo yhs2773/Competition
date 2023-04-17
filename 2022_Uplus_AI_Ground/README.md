@@ -4,6 +4,8 @@
 <br>
 <br>
 추천시스템 경진대회 by 유플러스 & 업스테이지
+![kids](https://user-images.githubusercontent.com/107394778/232460485-2726474f-8f8c-4ea1-a922-7285296d6dca.png)
+
 #### 평가지표
 - Recall@K: 추천 시스템에서 K에 대한 Recall은 사용자에게 추천된 아이템 중 해당 사용자에게 관련성이 있는 아이템의 비율을 나타내며 전체 점수 중 75%의 비중을 차지
 - NDCG@K: 추천 시스템에서 K에 대한 NDCG는 추천된 아이템들의 관련성과 랭킹을 고려하여 랭킹 알고리즘의 효과를 측정하는 지표로 전체 점수 중 25%의 비중을 차지
@@ -36,6 +38,8 @@
 1. 다양한 피처들을 (성별, 시청 시간, 컨텐츠 주인공 등) 집어넣어 진행 (결과 = 0.2167 까지 향상)
 2. DNN의 layer 변경 및 최종 hidden layer 차원 조절 후 0.2180까지 향상
 3. Optimal hyperparameter를 찾기 위해 ray tune과 grid search를 진행 후 결과를 0.2230까지 향상
+![neumf](https://user-images.githubusercontent.com/107394778/232460745-c2c9534e-9058-4b49-89ff-0e5ad2184488.png)
+
 #### LightGCN
 1. Negative sampling과 모델을 바꿔보는 것도 좋을거 같아서 찾아봄
 2. [Bayesian Negative Sampling for Recommendation](https://arxiv.org/pdf/2204.06520.pdf)이라는 22년 7월에 나온 논문을 찾아 시도해보기로 결정
