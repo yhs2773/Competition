@@ -33,12 +33,12 @@
 
     - Case 1, Case 2, Case 3
          - Binary classification (부분) <br>
-            Case 1 : 컵홀더 데이터 <br>
-            train & test 데이터 : 컵홀더(2500장), 오염된 컵홀더(1092장)<br>
-            Case 2 : 앞 좌석 vs 오염된 매트<br>
-            train & test 데이터 : 앞 좌석(2500장), 오염된 매트(2500장)<br>
-            Case 3 : 뒷 좌석 vs 오염된 매트<br>
-            train & test 데이터 : 뒷 좌석(2500장, 오염된 매트(2500장)<br>
+           Case 1 : 컵홀더 데이터 <br>
+           train & test 데이터 : 컵홀더(2500장), 오염된 컵홀더(1092장)<br>
+           Case 2 : 앞 좌석 vs 오염된 매트<br>
+           train & test 데이터 : 앞 좌석(2500장), 오염된 매트(2500장)<br>
+           Case 3 : 뒷 좌석 vs 오염된 매트<br>
+           train & test 데이터 : 뒷 좌석(2500장, 오염된 매트(2500장)<br>
 
     - Case 4
         - Multi-class classification <br>
@@ -50,3 +50,7 @@
     - 결과
     - 평가지표:  Accuracy, F1-Score, Recall<br>
     ![mcc_result](https://user-images.githubusercontent.com/107394778/231436986-1e882315-c314-4211-a6a5-a6b528e6ddd1.jpg)
+
+### 개선점
+- 분류된 데이터 이외에 데이터를 처리하는 방법 필요
+  - 차량과 관련없는 데이터를 처리하는 방법의 추가가 필요하다
