@@ -12,6 +12,7 @@ At the heart of this competition lies the quest to unlock the potential of artif
 ## Data Analysis
 Data is comprised of the supreme court cases and a dataset has three features and a label:
 
+| Name | dtype | feature/<br>label |
 |--|--|--|
 | First party | (string) | feature |
 | Second party | (string) | feature |
