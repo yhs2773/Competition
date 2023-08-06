@@ -10,4 +10,12 @@ Exploring how an AI can be effectively leveraged in the legal domain, this compe
 At the heart of this competition lies the quest to unlock the potential of artificial intelligence in the realm of jurisprudence. A task is to harness the power of data and cutting-edge algorithms to create a model that excels in predicting court rulings.
 
 ## Data Analysis
-Data is comprised of the supreme court cases. A dataset is 
+Data is comprised of the supreme court cases and a dataset has three features and a label:
+
+|--|--|--|
+| First party | (string) | feature |
+| Second party | (string) | feature |
+| Facts | (string) | feature |
+| First party winner | (integer) | label |
+
+First party and second party consists of names and facts consist of the details of the case
