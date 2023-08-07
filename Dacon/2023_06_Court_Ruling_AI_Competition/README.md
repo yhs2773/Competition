@@ -9,7 +9,6 @@ Exploring how an AI can be effectively leveraged in the legal domain, this compe
 
 At the heart of this competition lies the quest to unlock the potential of artificial intelligence in the realm of jurisprudence. A task was to harness the power of data and cutting-edge algorithms to create a model that excels in predicting court rulings.
 
-## Data Analysis
 Data was comprised of the supreme court cases and a dataset had three features and a label:
 
 | Col. name | dtype | feature/<br>label |
@@ -26,7 +25,39 @@ With the given dataset, following steps have been taken:
 - Handle imbalanced data
 - Cleanse text
 - Stem/lemmatize words
+- Use TF-IDF vectorizer
 
 #### Handle imbalanced data
-As mentioned in data analysis, the dataset had 1s and 0s, with 1 meaning first party winner and 0 meaning second party winner and had a ratio of 2:1, which showed some imbalance in a data.
+As mentioned above, the dataset had 1s and 0s as a label, indicating that it was a binary classifiaction problem and had a ratio of 2:1, which showed some imbalance in a data.
 
+We know that imbalanced classification problems pose a risk of poor predictive modeling as algorithms assume that the ratio of classes are nearly equal. However, the label was not highly imbalanced (i.e. 10:1), so I attempted three different ways of handling the proportion of the label:
+1. Not handle imbalanced data
+2. Upsample the data
+3. Downsample the data
+
+When I didn't change the ratio of each class, both machine learning and deep learning models performed poorly (underfitting). The accuracy of the validation data was around 51%, just above random guessing (50%), so I approached the second option: upsampling.
+
+Upsampling showed great results with the validation data, but overall performed poorly as well (overfitting). The accuracy of the validation data was 80%, but when submitting the prediction with the test data, the results weren't great (similar results with option 1).
+
+So I downsampled the data and the results of both validation and test data were in the middle of option 1 and 2.
+
+#### Cleanse text
+Looking into the data, I figured that the text had errors and some unnecessary characters (irrelevant information), so I updated the feature columns with regex and stopwords:
+- Transform into lowercase
+- Remove parenthesis
+- Remove double quotes
+- Update contractions (e.g. you'll -> you will)
+- Remove possessive term
+- Remove special characters
+- Remove stopwords (from nltk library)
+
+#### Stem/lemmatize words
+Then I used stemming/lemmatization to update words into their root forms. Unfortunately, the results after transforming words using stemming/lemmatization weren't great. Using these transforms lowered the results by 1~2%. Although, I assumed this was the right approach towards NLP data, I decided not to transform words.
+
+#### TF-IDF Vectorizer
+In order to input text data into algorithms, we have to change words/characters into a set of integers. In this case, I used TF-IDF vectorizer.
+
+Provided by scikit-learn library, TF-IDF vectorizer converts a collection of raw documents to a matrix of TF-IDF features, which is equalivalent to transforming words with count vectorizer followed by TF-IDF. TF-IDF, which stands for Term Frequency-Inverse Document Frequency, expresses the term weightings of each word in a corpus. And count vectorizer converts a collection of text documents to a matrix of token counts.
+
+## Model
+As many of us would do, I tried both machine learning and deep learning algorithms.
