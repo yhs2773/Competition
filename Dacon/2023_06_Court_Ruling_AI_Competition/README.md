@@ -73,6 +73,6 @@ However, as many of us would be aware, single model itself doesn't produce highe
 
 ## Improvements
 - Try different preprocessing methods for the given NLP dataset
-- Try more deep learning algorithms for NLP problem like DeBERTa
+- Test more deep learning algorithms for NLP problem like DeBERTa
 - Ensemble deep learning models
 - Ensemble both machine learning and deep learning models
