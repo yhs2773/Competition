@@ -60,4 +60,19 @@ In order to input text data into algorithms, we have to change words/characters 
 Provided by scikit-learn library, TF-IDF vectorizer converts a collection of raw documents to a matrix of TF-IDF features, which is equalivalent to transforming words with count vectorizer followed by TF-IDF. TF-IDF, which stands for Term Frequency-Inverse Document Frequency, expresses the term weightings of each word in a corpus. And count vectorizer converts a collection of text documents to a matrix of token counts.
 
 ## Model
-As many of us would do, I tried both machine learning and deep learning algorithms.
+At first, I focused on testing machine learning models as they produce faster results than deep learning models in general, but the output of predictions weren't great. To enhance results, I used AutoML libraries such as pycaret, atuogluon, etc. without any success.
+
+Then I proceeded to utilizing deep learning models to see their performance. I've used XLM-RoBERTa and Bert, since they had pretrained weights and they did score higher than machine learning algorithms.
+
+However, as many of us would be aware, single model itself doesn't produce higher results than an ensembled model. To strenghthen the modeling part, I chose some of the high performing models depending on their accuracy and ensembled them using a stacking classifier and that did produce the best result out of all cases.
+
+## Result
+- Ranked 11 out of 506 teams
+- Was able to preprocess text data in various ways
+- Was able to utilize different models and modeling methods
+
+## Improvements
+- Try different preprocessing methods for the given NLP dataset
+- Try more deep learning algorithms for NLP problem like DeBERTa
+- Ensemble deep learning models
+- Ensemble both machine learning and deep learning models
